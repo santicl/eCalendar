@@ -20,7 +20,7 @@ const getData = () => {
         for (let i = 0; i < data.length; i++) {
             const { person1, person2, day, from, to } = data[i];
             let index = verifyDay(day);
-            const id = 'from' + from + 'to' + to + ' ' + index;
+            const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + index;
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
         }
     })
@@ -80,7 +80,7 @@ const setSpaces = () => {
     let data = getTrs();
     for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < tds; j++) {
-            data[i].innerHTML += `<td id="${data[i].id} ${j}"><button class="btn btn-success" id="${data[i].id}">Apartar Cupo</button></td>`;
+            data[i].innerHTML += `<td id="${data[i].id} ${j}"><button class="btn btn-success" id="${data[i].id}">${data[i].id}</button></td>`;
         }
     }
     configPopup();

@@ -56,3 +56,9 @@ input#name1, input#name2, input#turn {
     color: white;
     content: "\f00d";
 }
+
+button {
+    height: 60px;
+    font-size: 12px;
+    width: 85px;
+}
