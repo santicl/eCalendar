@@ -80,7 +80,7 @@ const setSpaces = () => {
     let data = getTrs();
     for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < tds; j++) {
-            data[i].innerHTML += `<td id="${data[i].id} ${j}"><button class="btn btn-success" id="${data[i].id}">${data[i].id}</button></td>`;
+            data[i].innerHTML += `<td id="${data[i].id} ${j}"><button class="btn btn-success btns" id="${data[i].id}">${data[i].id}</button></td>`;
         }
     }
     configPopup();
