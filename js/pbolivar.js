@@ -1,16 +1,9 @@
-let days = [
-    { day: 'lunes', index: 0 },
-    { day: 'martes', index: 1 },
-    { day: 'miercoles', index: 2 },
-    { day: 'jueves', index: 3 },
-    { day: 'viernes', index: 4 },
-    { day: 'sabado', index: 5 },
-    { day: 'domingo', index: 6 }
-];
+import { days } from "./components/components.js";
+
+let API = 'https://api-pbolivar-default-rtdb.firebaseio.com/salon.json';
 
 const getPersons = async () => {
-    const url = 'https://api-nelfa-default-rtdb.firebaseio.com/persons.json'
-    const response = await fetch(url);
+    const response = await fetch(API);
     const data = await response.json();
     return data;
 }
@@ -23,6 +16,8 @@ const getData = () => {
             const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + index;
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
         }
+    }).catch(err => {
+        console.log(err);
     })
 }
 getData();
@@ -80,7 +75,9 @@ const setSpaces = () => {
     let data = getTrs();
     for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < tds; j++) {
-            data[i].innerHTML += `<td id="${data[i].id} ${j}"><button class="btn btn-success btns" id="${data[i].id}">${data[i].id}</button></td>`;
+            data[i].innerHTML += `<td id="${data[i].id} ${j}">
+            <button class="btn btn-success btns" id="${data[i].id}">${data[i].id}</button>
+            </td>`;
         }
     }
     configPopup();
@@ -94,7 +91,7 @@ const readSend = () => {
         const name2 = document.getElementById('name2').value;
         const turn = document.getElementById('turn').value;
 
-        const URL = 'https://api.whatsapp.com/send?phone=573162421339&text=Deseo%20apartar%20un%20cupo%20con%20' + name1 + '%20y%20' + name2 + '%20para%20' + turn;
+        const URL = 'https://api.whatsapp.com/send?phone=573003261784&text=Deseo%20apartar%20un%20cupo%20con%20' + name1 + '%20y%20' + name2 + '%20para%20' + turn;
         window.location.href = URL;
         closePop();
     })
