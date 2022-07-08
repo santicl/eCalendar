@@ -112,7 +112,7 @@ const showPopup = () => {
       <label for="">Ingrese el nombre de su acompañante</label>
       <input id="name2" type="text" name="nombre acompañante" placeholder="Nombre Acompañante">
       <label>Ingrese el dia
-      <input class="form-control" id="day" placeholder="Elige tu Dia..." list="day" name="listTitles" required>
+      <input class="form-control" id="days" placeholder="Elige tu Dia..." list="day" name="listDays" required>
     </label>
     <datalist id="day">
       <option value="Lunes">
