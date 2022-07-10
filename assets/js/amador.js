@@ -1,6 +1,6 @@
 import { days } from "./components/components.js";
 
-let API = 'https://api-nelfa-default-rtdb.firebaseio.com/persons.json';
+let API = 'https://api-amador-default-rtdb.firebaseio.com/amador.json';
 
 const getPersons = async () => {
     const response = await fetch(API);
@@ -11,10 +11,15 @@ const getPersons = async () => {
 const getData = () => {
     getPersons().then(data => {
         for (let i = 0; i < data.length; i++) {
-            const { person1, person2, day, from, to } = data[i];
+            if (data[i] == null) {
+                return;
+            } else {
+                const { person1, person2, day, from, to } = data[i];
             let index = verifyDay(day);
             const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + index;
+            console.log(id);
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
+            }
         }
     }).catch(err => {
         console.log(err);

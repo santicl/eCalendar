@@ -12,10 +12,10 @@ const getData = () => {
     getPersons().then(data => {
         console.log(data);
         for (let i = 0; i < data.length; i++) {
-            const { person1, person2, day, from, to } = data[i];
+            const { person1, person2, day, from, to, temp } = data[i];
             let index = verifyDay(day);
-            const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + index;
-            console.log(id);
+            const tempValue = vTemp(temp);
+            const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + tempValue + ' ' + index;
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
         }
     }).catch(err => {
@@ -23,6 +23,18 @@ const getData = () => {
     })
 }
 window.onload = getData;
+
+const vTemp = (temp) => {
+    let str;
+    if (temp === "tarde") {
+        str = "PM";
+        return str;
+    } 
+    if (temp === "mañana") {
+        str = "AM";
+        return str;        
+    }
+}
 
 const verifyDay = (dataDay) => {
     for (let i = 0; i < days.length; i++) {
@@ -93,7 +105,7 @@ const readSend = () => {
         const name2 = document.getElementById('name2').value;
         const turn = document.getElementById('turn').value;
 
-        const URL = 'https://api.whatsapp.com/send?phone=573162421339&text=Deseo%20apartar%20un%20cupo%20con%20' + name1 + '%20y%20' + name2 + '%20para%20' + turn + '%20para%20el%20dia%20' + document.getElementById('day').value;
+        const URL = 'https://api.whatsapp.com/send?phone=573114177175&text=Deseo%20apartar%20un%20cupo%20con%20' + name1 + '%20y%20' + name2 + '%20para%20' + turn + '%20para%20el%20dia%20' + document.getElementById('day').value;
         window.location.href = URL;
         closePop();
     })
