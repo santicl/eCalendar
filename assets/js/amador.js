@@ -1,6 +1,6 @@
 import { days } from "./components/components.js";
 
-let API = 'https://api-amador-default-rtdb.firebaseio.com/amador.json';
+let API = 'https://api-amador-3c8ee-default-rtdb.firebaseio.com/amador.json';
 
 const getPersons = async () => {
     const response = await fetch(API);
