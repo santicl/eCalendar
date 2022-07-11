@@ -10,17 +10,31 @@ const getPersons = async () => {
 
 const getData = () => {
     getPersons().then(data => {
+        console.log(data);
         for (let i = 0; i < data.length; i++) {
-            const { person1, person2, day, from, to } = data[i];
+            const { person1, person2, day, from, to, temp } = data[i];
             let index = verifyDay(day);
-            const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + index;
+            const tempValue = vTemp(temp);
+            const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + tempValue + ' ' + index;
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
         }
     }).catch(err => {
         console.log(err);
     })
 }
-getData();
+window.onload = getData;
+
+const vTemp = (temp) => {
+    let str;
+    if (temp === "tarde") {
+        str = "PM";
+        return str;
+    } 
+    if (temp === "mañana") {
+        str = "AM";
+        return str;        
+    }
+}
 
 const verifyDay = (dataDay) => {
     for (let i = 0; i < days.length; i++) {
