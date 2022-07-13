@@ -1,3 +1,4 @@
+// List Objects
 export let days = [
     { day: 'lunes', index: 0 },
     { day: 'martes', index: 1 },
@@ -13,8 +14,9 @@ const names = [
     { nameEX: "Jose Figueroa", cel: 3114177175 },
     { nameEX: "Pablo Rojas", cel: 3003261784 },
     { nameEX: "Alberto Angulo", cel: 3135639099 }
-]
+];
 
+// Abreviated Location And function with variables to export
 export let LOCATION = window.location.href;
 
 const getPersons = async (API) => {
@@ -39,6 +41,20 @@ export const getData = (API) => {
     })
 }
 
+export const setSpaces = () => {
+    const tds = 7;
+    let data = getTrs();
+    for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < tds; j++) {
+            data[i].innerHTML += `<td id="${data[i].id} ${j}">
+            <button class="btn btn-success btns" id="${data[i].id}">${data[i].id}</button>
+            </td>`;
+        }
+    }
+    configPopup();
+}
+
+// Functions plus for principal components
 const vTemp = (temp) => {
     let str;
     if (temp === "tarde") {
@@ -160,17 +176,4 @@ const getTrs = () => {
         data.push(ele);
     }
     return data
-}
-
-export const setSpaces = () => {
-    const tds = 7;
-    let data = getTrs();
-    for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < tds; j++) {
-            data[i].innerHTML += `<td id="${data[i].id} ${j}">
-            <button class="btn btn-success btns" id="${data[i].id}">${data[i].id}</button>
-            </td>`;
-        }
-    }
-    configPopup();
 }
