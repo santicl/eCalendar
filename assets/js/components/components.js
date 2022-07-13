@@ -8,7 +8,7 @@ export let days = [
     { day: 'domingo', index: 6 }
 ];
 
-export const LOCATION = window.location.href;
+export let LOCATION = window.location.href;
 
 const getPersons = async (API) => {
     const response = await fetch(API);
@@ -127,7 +127,7 @@ const readSend = () => {
         const getNumber = getNumbers(document.getElementById("name-ex").textContent);
 
         const URL = 'https://api.whatsapp.com/send?phone=57' + getNumber + '&text=Deseo%20apartar%20un%20cupo%20con%20' + name1 + '%20y%20' + name2 + '%20para%20' + turn + '%20para%20el%20dia%20' + document.getElementById('day').value;
-        LOCATION = URL;
+        window.location.href = URL;
         closePop();
     })
 }
