@@ -7,11 +7,11 @@ const nelfaPATHAlternate = 'http://localhost/ecalendar/nelfa.html';
 const paseoPATH = 'https://exhibidores.netlify.app/paseo-bolivar.html';
 const paseoPATHAlternate = 'http://localhost/ecalendar/paseo-bolivar.html';
 
-const salonPATH = 'https://exhibidores.netlify.app/salon-bolivar.html';
-const salonPATHAlternate = 'http://localhost/ecalendar/salon-bolivar.html';
+const salonPATH = 'https://exhibidores.netlify.app/salon-reino.html';
+const salonPATHAlternate = 'http://localhost/ecalendar/salon-reino.html';
 
-const amadorPATH = 'https://exhibidores.netlify.app/amador-bolivar.html';
-const amadorPATHAlternate = 'http://localhost/ecalendar/amador-bolivar.html';
+const amadorPATH = 'https://exhibidores.netlify.app/amador.html';
+const amadorPATHAlternate = 'http://localhost/ecalendar/amador.html';
 
 // API'S
 const API_NELFA = 'https://api-nelfa-default-rtdb.firebaseio.com/persons.json';

@@ -23,6 +23,7 @@ export const getData = (API) => {
             const { person1, person2, day, from, to, temp } = data[i];
             let index = verifyDay(day);
             const tempValue = vTemp(temp);
+            console.log(index, tempValue);
             const id = 'De' + ' ' + from + ' ' + 'a' + ' ' + to + ' ' + tempValue + ' ' + index;
             document.getElementById(id).innerHTML = `${person1} <br> ${person2}`;
         }
