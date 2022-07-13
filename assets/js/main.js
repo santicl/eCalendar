@@ -1,8 +1,6 @@
 /**
-* Template Name: Vesperr - v4.7.0
-* Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Template Name: EX Torices - v1.0.0
+* Author: SantyDev
 */
 (function() {
   "use strict";
