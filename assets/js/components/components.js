@@ -8,6 +8,13 @@ export let days = [
     { day: 'domingo', index: 6 }
 ];
 
+const names = [
+    { nameEX: "Luis Caballero", cel: 3162421339 },
+    { nameEX: "Jose Figueroa", cel: 3114177175 },
+    { nameEX: "Pablo Rojas", cel: 3003261784 },
+    { nameEX: "Alberto Angulo", cel: 3135639099 }
+]
+
 export let LOCATION = window.location.href;
 
 const getPersons = async (API) => {
@@ -37,10 +44,10 @@ const vTemp = (temp) => {
     if (temp === "tarde") {
         str = "PM";
         return str;
-    } 
+    }
     if (temp === "mañana") {
         str = "AM";
-        return str;        
+        return str;
     }
 }
 
@@ -133,20 +140,11 @@ const readSend = () => {
 }
 
 const getNumbers = (name) => {
-    if (name === "Luis Caballero") {
-        return "3162421339";
-    }
-    
-    if (name === "Jose Figueroa") {
-        return "3114177175";
-    }
-
-    if (name === "Pablo Rojas") {
-        return "3003261784";
-    }
-
-    if (name === "Alberto Angulo") {
-        return "3135639099";
+    for (let i = 0; i < names.length; i++) {
+        const { nameEX, cel } = names[i];
+        if (nameEX === name) {
+            return cel;
+        }
     }
 }
 
