@@ -73,3 +73,7 @@ button.btn.btn-success.circle {
     border-radius: 50%;
     height: 30px;
 }
+
+a.brand.navbar-brand {
+    font-size: 27px;
+}
